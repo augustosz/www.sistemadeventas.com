@@ -13,6 +13,8 @@
 	<link rel="stylesheet" href="../public/templates/AdminLTE-3.1.0/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
 	<!-- Theme style -->
 	<link rel="stylesheet" href="../public/templates/AdminLTE-3.1.0/dist/css/adminlte.min.css">
+  <!-- Sweetalert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body class="hold-transition login-page " style=" background: rgb(8,42,93);
 background: linear-gradient(180deg, rgba(8,42,93,1) 1%, rgba(10,14,66,1) 50%, rgba(8,13,51,1) 90%); ">
@@ -20,6 +22,28 @@ background: linear-gradient(180deg, rgba(8,42,93,1) 1%, rgba(10,14,66,1) 50%, rg
 <div class="login-box">
 
 	<!-- /.login-logo -->
+
+  <?php
+  session_start();
+  if(isset($_SESSION['mensaje'])){
+    $respuesta = $_SESSION['mensaje'];
+    
+    echo "
+      <script>
+        Swal.fire({
+          position: 'center',
+          icon: 'error',
+          title: '$respuesta',
+          showConfirmButton: false,
+          timer: 1000
+        });
+      </script>
+    ";
+    session_destroy();
+    
+ 
+  }
+  ?>
 
 	<div class="card card-outline card-primary">
 
