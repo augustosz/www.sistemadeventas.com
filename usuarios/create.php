@@ -2,7 +2,48 @@
 include("../app/config.php");
 include("../layout/sesion.php");
 
-include("../layout/parte1.php"); ?>
+include("../layout/parte1.php");
+
+
+session_start();
+if (isset($_SESSION['mensaje'])) {
+  $respuesta = $_SESSION['mensaje']; 
+    echo "
+      <script>
+        Swal.fire({
+          position: 'center',
+          icon: 'error',
+          title: '$respuesta',
+          showConfirmButton: false,
+          timer: 1000
+        });
+      </script>
+    ";
+
+}
+?>
+
+<?php
+  session_start();
+  if(isset($_SESSION['mensaje'])){
+    $respuesta = $_SESSION['mensaje'];
+    
+    echo "
+      <script>
+        Swal.fire({
+          position: 'center',
+          icon: 'error',
+          title: '$respuesta',
+          showConfirmButton: false,
+          timer: 1000
+        });
+      </script>
+    ";
+    session_destroy();
+    
+ 
+  }
+  ?>
 
 
 <!-- Content Wrapper. Contains page content -->

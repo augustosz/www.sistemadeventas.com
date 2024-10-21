@@ -17,5 +17,7 @@ if ($password_user == $password_repeat) {
   $sentencia->execute();
 
 } else {
-  
+  session_start();
+  $_SESSION['mensaje'] = "Error: las contraseñas no son iguales";
+  header('Location: '.$URL.'usuarios/create.php');
 }
