@@ -3,8 +3,8 @@ include("../app/config.php");
 include("../layout/sesion.php");
 
 include("../layout/parte1.php");
+include("../app/controllers/usuarios/update_usuarios.php");
 ?>
-
 
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
@@ -13,7 +13,7 @@ include("../layout/parte1.php");
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1 class="m-0">Creación de usuarios</h1>
+          <h1 class="m-0">Actualizar datos de usuario</h1>
         </div><!-- /.col -->
         <div class="col-sm-6">
 
@@ -31,7 +31,7 @@ include("../layout/parte1.php");
       <div class="row">
         <div class="col-md-6">
 
-          <div class="card card-primary">
+          <div class="card card-success">
             <div class="card-header">
               <h3 class="card-title">Rellene con datos de usuario</h3>
 
@@ -45,14 +45,16 @@ include("../layout/parte1.php");
             <div class="card-body">
               <div class="row">
                 <div class="col-md-12">
-                  <form action="../app/controllers/usuarios/create.php" method="post">
+                  <form action="../app/controllers/usuarios/update.php" method="post">
+                    <input type="text" name="id_usuario" value="<?php echo $id_usuario_get ?>" hidden>
+
                     <div class="form-group">
                       <label for="">Nombre</label>
-                      <input type="text" name="nombres" id="" class="form-control" placeholder="Ingrese el nombre de usuario">
+                      <input type="text" name="nombres" id="" class="form-control" value="<?php echo $nombres ?>" placeholder="Ingrese el nombre de usuario">
                     </div>
                     <div class="form-group">
                       <label for="">Email</label>
-                      <input type="email" name="email" id="" class="form-control" placeholder="Ingrese el correo de usuario">
+                      <input type="email" name="email" id="" class="form-control" value="<?php echo $email ?>" placeholder="Ingrese el correo de usuario">
                     </div>
                     <div class="form-group">
                       <label for="">Contraseña</label>
@@ -64,7 +66,7 @@ include("../layout/parte1.php");
                     </div>
                     <hr>
                     <div class="form-group">
-                      <button type="submit" class="btn btn-primary">Aceptar</button>
+                      <button type="submit" class="btn btn-success">Actualizar</button>
                       <a href="" class="btn btn-secondary">Cancelar</a>
                     </div>
                   </form>
@@ -80,4 +82,5 @@ include("../layout/parte1.php");
   <!-- /.content -->
 </div>
 
+<?php include("../layout/mensajes.php"); ?>
 <?php include("../layout/parte2.php"); ?>

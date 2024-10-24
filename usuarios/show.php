@@ -3,6 +3,7 @@ include("../app/config.php");
 include("../layout/sesion.php");
 
 include("../layout/parte1.php");
+include("../app/controllers/usuarios/show_usuarios.php");
 ?>
 
 
@@ -13,7 +14,7 @@ include("../layout/parte1.php");
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1 class="m-0">Creación de usuarios</h1>
+          <h1 class="m-0">Visualización de usuario</h1>
         </div><!-- /.col -->
         <div class="col-sm-6">
 
@@ -33,7 +34,7 @@ include("../layout/parte1.php");
 
           <div class="card card-primary">
             <div class="card-header">
-              <h3 class="card-title">Rellene con datos de usuario</h3>
+              <h3 class="card-title">Datos de usuario</h3>
 
               <div class="card-tools">
                 <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
@@ -45,29 +46,20 @@ include("../layout/parte1.php");
             <div class="card-body">
               <div class="row">
                 <div class="col-md-12">
-                  <form action="../app/controllers/usuarios/create.php" method="post">
-                    <div class="form-group">
-                      <label for="">Nombre</label>
-                      <input type="text" name="nombres" id="" class="form-control" placeholder="Ingrese el nombre de usuario">
+                  
+                    <div>
+                      <label>Nombre</label>
+                      <input name="nombres" class="form-control" value="<?php echo $nombres ?>" disabled>
                     </div>
-                    <div class="form-group">
-                      <label for="">Email</label>
-                      <input type="email" name="email" id="" class="form-control" placeholder="Ingrese el correo de usuario">
-                    </div>
-                    <div class="form-group">
-                      <label for="">Contraseña</label>
-                      <input type="text" name="password_user" id="" class="form-control">
-                    </div>
-                    <div class="form-group">
-                      <label for="">Repita la contraseña</label>
-                      <input type="text" name="password_repeat" id="" class="form-control">
+                    <div >
+                      <label>Email</label>
+                      <input name="email" class="form-control" value="<?php echo $email ?>" disabled>
                     </div>
                     <hr>
-                    <div class="form-group">
-                      <button type="submit" class="btn btn-primary">Aceptar</button>
-                      <a href="" class="btn btn-secondary">Cancelar</a>
+                    <div>
+                      <a href="index.php" class="btn btn-primary">Volver</a>
                     </div>
-                  </form>
+
                 </div>
               </div>
             </div>
