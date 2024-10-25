@@ -50,11 +50,11 @@ include("../app/controllers/usuarios/update_usuarios.php");
 
                     <div class="form-group">
                       <label for="">Nombre</label>
-                      <input type="text" name="nombres" id="" class="form-control" value="<?php echo $nombres ?>" placeholder="Ingrese el nombre de usuario">
+                      <input type="text" name="nombres" id="" class="form-control" value="<?php echo $nombres ?>" placeholder="Ingrese el nombre de usuario" required>
                     </div>
                     <div class="form-group">
                       <label for="">Email</label>
-                      <input type="email" name="email" id="" class="form-control" value="<?php echo $email ?>" placeholder="Ingrese el correo de usuario">
+                      <input type="email" name="email" id="" class="form-control" value="<?php echo $email ?>" placeholder="Ingrese el correo de usuario" required>
                     </div>
                     <div class="form-group">
                       <label for="">Contraseña</label>
@@ -78,8 +78,7 @@ include("../app/controllers/usuarios/update_usuarios.php");
         </div>
       </div>
     </div><!-- /.container-fluid -->
-  </div>
-  <!-- /.content -->
+  </div><!-- /.content -->
 </div>
 
 <?php include("../layout/mensajes.php"); ?>
