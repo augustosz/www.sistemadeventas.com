@@ -13,22 +13,22 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="<?php echo $URL;?>public/templates/AdminLTE-3.1.0/plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="<?php echo $URL; ?>public/templates/AdminLTE-3.1.0/plugins/fontawesome-free/css/all.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="<?php echo $URL;?>public/templates/AdminLTE-3.1.0/dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="<?php echo $URL; ?>public/templates/AdminLTE-3.1.0/dist/css/adminlte.min.css">
   <!-- Sweetalert2 -->
-  <link rel="stylesheet" href="<?php echo $URL;?>public/templates/AdminLTE-3.1.0/plugins/sweetalert2/sweetalert2.min.css">
-<!-- DataTables -->
-  <link rel="stylesheet" href="<?php echo $URL;?>public/templates/AdminLTE-3.1.0/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
-  <link rel="stylesheet" href="<?php echo $URL;?>public/templates/AdminLTE-3.1.0/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
-  <link rel="stylesheet" href="<?php echo $URL;?>public/templates/AdminLTE-3.1.0/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+  <link rel="stylesheet" href="<?php echo $URL; ?>public/templates/AdminLTE-3.1.0/plugins/sweetalert2/sweetalert2.min.css">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="<?php echo $URL; ?>public/templates/AdminLTE-3.1.0/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="<?php echo $URL; ?>public/templates/AdminLTE-3.1.0/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+  <link rel="stylesheet" href="<?php echo $URL; ?>public/templates/AdminLTE-3.1.0/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
 
 
 </head>
 
 <body class="hold-transition sidebar-mini">
 
-  <script src="<?php echo $URL;?>public/templates/AdminLTE-3.1.0/plugins/sweetalert2/sweetalert2.min.js"></script>
+  <script src="<?php echo $URL; ?>public/templates/AdminLTE-3.1.0/plugins/sweetalert2/sweetalert2.min.js"></script>
 
   <?php
 
@@ -89,7 +89,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
           <div class="image">
-            <img src="<?php echo $URL;?>public/templates/AdminLTE-3.1.0/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+            <img src="<?php echo $URL; ?>public/templates/AdminLTE-3.1.0/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
           </div>
           <div class="info">
             <a href="#" class="d-block"><?php echo $sesion_nombre; ?></a>
@@ -112,13 +112,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="<?php echo $URL;?>usuarios/index.php" class="nav-link">
+                  <a href="<?php echo $URL; ?>usuarios/index.php" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Listado de usuarios</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="<?php echo $URL;?>usuarios/create.php" class="nav-link">
+                  <a href="<?php echo $URL; ?>usuarios/create.php" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Creación de usuarios</p>
                   </a>
@@ -126,15 +126,43 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </ul>
             </li>
 
-            <!-- Botón de Cerrar sesión -->
-            <li class="nav-item">
-              <a href="<?php echo $URL; ?>app/controllers/login/cerrar_sesion.php" class="nav-link btn btn-danger">
-                <i class="fas fa-sign-out-alt nav-icon"></i>
-                <p>Cerrar sesión</p>
-              </a>
-            </li>
-          </ul>
-        </nav>
+
+            <!-- Sidebar Menu -->
+                <li class="nav-item">
+                  <a href="#" class="nav-link active">
+                    <i class="nav-icon fas fa-address-card"></i>
+                    <p>
+                      Roles
+                      <i class="right fas fa-angle-left"></i>
+                    </p>
+                  </a>
+                  <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                      <a href="<?php echo $URL; ?>roles/index.php" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Listado de roles</p>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="<?php echo $URL; ?>roles/create.php" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Creación de rol</p>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+
+                <!-- Botón de Cerrar sesión -->
+                <li class="nav-item">
+                  <a href="<?php echo $URL; ?>app/controllers/login/cerrar_sesion.php" class="nav-link btn btn-danger">
+                    <i class="fas fa-sign-out-alt nav-icon"></i>
+                    <p>Cerrar sesión</p>
+                  </a>
+                </li>
+
+
+              </ul>
+            </nav>
 
         </nav>
         <!-- /.sidebar-menu -->

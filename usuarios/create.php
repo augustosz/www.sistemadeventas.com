@@ -1,8 +1,9 @@
 <?php
 include("../app/config.php");
 include("../layout/sesion.php");
-
 include("../layout/parte1.php");
+include("../app/controllers/roles/listado_roles.php");
+
 ?>
 
 
@@ -56,6 +57,17 @@ include("../layout/parte1.php");
                       <input type="email" name="email" id="" class="form-control" placeholder="Ingrese el correo de usuario" required>
                     </div>
                     <div class="form-group">
+                      <label for="">Rol</label>
+                      <select name="rol" id="" class="form-control">
+                        <?php
+                        foreach ($tb_roles as $reg_rol) {?>
+                          <option value="<?php echo $reg_rol['id_rol']; ?>"><?php echo $reg_rol['rol']; ?></option>
+                        <?php
+                        }
+                        ?>
+                      </select>
+                    </div>
+                    <div class="form-group">
                       <label for="">Contraseña</label>
                       <input type="text" name="password_user" id="" class="form-control" required>
                     </div>
@@ -66,7 +78,7 @@ include("../layout/parte1.php");
                     <hr>
                     <div class="form-group">
                       <button type="submit" class="btn btn-primary">Aceptar</button>
-                      <a href="" class="btn btn-secondary">Cancelar</a>
+                      <a href="<?php echo $URL; ?>index.php" class="btn btn-secondary">Volver a inicio</a>
                     </div>
 
                   </form>

@@ -1,6 +1,6 @@
 <?php
 include("../app/config.php");
-include("../app/controllers/usuarios/listado_usuarios.php");
+include("../app/controllers/roles/listado_roles.php");
 
 include("../layout/sesion.php");
 
@@ -15,7 +15,7 @@ include("../layout/parte1.php");
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1 class="m-0">Lista de usuarios</h1>
+          <h1 class="m-0">Lista de roles</h1>
         </div><!-- /.col -->
         <div class="col-sm-6">
 
@@ -30,11 +30,11 @@ include("../layout/parte1.php");
   <div class="content">
     <div class="container-fluid">
       <div class="row">
-        <div class="col-12">
+        <div class="col-6">
 
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title">Usuarios registrados</h3>
+              <h3 class="card-title">Roles registrados</h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
@@ -42,30 +42,22 @@ include("../layout/parte1.php");
                 <thead>
                   <tr>
                     <th class="col-1">Números</th>
-                    <th>Nombres</th>
-                    <th>Email</th>
-                    <th>Roles</th>
-                    <th>
-                      <center>Acciones</center>
-                    </th>
+                    <th>Tipo de rol</th>
+                    <th>Acciones</th>
                   </tr>
                 </thead>
                 <tbody>
                   <?php
                   $contador = 0;
-                  foreach ($tb_usuarios as $usuario) {
-                    $id_usuario = $usuario['id_usuario']; ?>
+                  foreach ($tb_roles as $rol) {
+                    $id_rol = $rol['id_rol']; ?>
                     <tr>
                       <td><?php echo $contador = $contador + 1; ?></td>
-                      <td><?php echo $usuario['nombres']; ?></td>
-                      <td><?php echo $usuario['email']; ?></td>
-                      <td><?php echo $usuario['rol']; ?></td>
+                      <td><?php echo $rol['rol']; ?></td>
                       <td>
                         <center>
                           <div class="btn-group">
-                            <a href="show.php?id=<?php echo $id_usuario; ?>" type="button" class="btn btn-info"> <i class="fa fa-eye"></i> Ver</a>
-                            <a href="update.php?id=<?php echo $id_usuario; ?>" type="button" class="btn btn-success"> <i class="fa fa-pencil-alt"></i> Editar</a>
-                            <a href="delete.php?id=<?php echo $id_usuario; ?>" type="button" class="btn btn-danger"> <i class="fa fa-trash-alt"></i> Eliminar</a>
+                            <a href="update.php?id=<?php echo $id_rol; ?>" type="button" class="btn btn-success"> <i class="fa fa-pencil-alt"></i> Actualizar</a>
                           </div>
                         </center>
                       </td>
@@ -76,13 +68,9 @@ include("../layout/parte1.php");
                 </tbody>
                 <tfoot>
                   <tr>
-                    <th>Números</th>
-                    <th>Nombres</th>
-                    <th>Email</th>
-                    <th>Roles</th>
-                    <th>
-                      <center>Acciones</center>
-                    </th>
+                    <th class="col-1">Números</th>
+                    <th>Tipo de rol</th>
+                    <th>Acciones</th>
                   </tr>
                 </tfoot>
               </table>
@@ -113,12 +101,12 @@ include("../layout/parte1.php");
       language: {
         "emptyTable": "No hay información",
         "decimal": "",
-        "info": "Mostrando _START_ a _END_ de _TOTAL_ Usuarios",
-        "infoEmpty": "Mostrando 0 to 0 of 0 Usuarios",
-        "infoFiltered": "(Filtrado de MAX total Usuarios)",
+        "info": "Mostrando _START_ a _END_ de _TOTAL_ Roles",
+        "infoEmpty": "Mostrando 0 to 0 of 0 Roles",
+        "infoFiltered": "(Filtrado de MAX total Roles)",
         "infoPostFix": "",
         "thousands": ",",
-        "lengthMenu": "Mostrar _MENU_ Usuarios",
+        "lengthMenu": "Mostrar _MENU_ Roles",
         "loadingRecords": "Cargando...",
         "processing": "Procesando...",
         "search": "Buscador:",
